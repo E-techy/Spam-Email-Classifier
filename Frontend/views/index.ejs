@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Spam Classifier</title>
+    <link rel="stylesheet" href="./index.css" />
+    <!-- Loading the particle.js libraries -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
+    <!-- Injecting the backend port as a global JavaScript variable -->
+    <script>
+      const backendPort = <%= backendPort %>;
+    </script>
+  </head>
+  <body>
+    <!-- Container for the background with the particles effect -->
+    <div id="particles-js">
+      <div class="container">
+        <h1>Email Spam Classifier</h1>
+        <!-- Textarea to write the emails -->
+        <textarea
+          id="emailInput"
+          placeholder="Paste your email here"
+        ></textarea>
+        <div>
+          <button id="classifyBtn">Classify</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+        <!-- text to display if the email is spam or ham -->
+        <p id="result" class="hidden"></p>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

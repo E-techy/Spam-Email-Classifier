@@ -1,0 +1,122 @@
+/* ---- reset ---- */
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+}
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+/* ---- particles.js container ---- */
+#particles-js {
+  margin-top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f900;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: #201f1fa1;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 8px 12px rgba(230, 225, 225, 0.301);
+  max-width: 400px;
+  height: fit-content;
+}
+
+h1 {
+  font-size: 40px;
+  color: #1141c5e3;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid #727070d7;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white; /* Change text color to white */
+  background-color: rgba(17, 17, 17, 0.767); /* Set background to transparent */
+  caret-color: white; /* Ensure cursor color is visible on transparent background */
+}
+button {
+  width: 50%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  border-radius: 4px;
+  transition: transform 0.1s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+button#resetBtn {
+  border: 1px solid rgb(240, 63, 18);
+  color: #ee2323;
+}
+
+button#classifyBtn {
+  border: 1px solid rgb(12, 88, 201);
+  color: rgb(12, 88, 201);
+}
+
+/* Hover effects */
+button#resetBtn:hover {
+  background-color: rgba(240, 63, 18, 0.8);
+  color: white;
+  border-color: rgba(240, 63, 18, 0.8);
+}
+
+button#classifyBtn:hover {
+  background-color: rgba(12, 88, 201, 0.8);
+  color: white;
+  border-color: rgba(12, 88, 201, 0.8);
+}
+
+/* Click effect */
+button:active {
+  transform: scale(1.03); /* Slightly enlarge the button */
+}
+
+#result {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.spam {
+  color: red;
+}
+
+.ham {
+  color: green;
+}

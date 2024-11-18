@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  # Backend service which runs the spam_email_classifier model made using python.
+  backend:
+    build:
+      context: .
+      dockerfile: Backend.Dockerfile
+    ports:
+      - "${BACKEND_PORT:-4000}:${BACKEND_PORT:-4000}"
+    environment:
+      - FRONTEND_PORT=${FRONTEND_PORT}
+      - BACKEND_PORT=${BACKEND_PORT}
+    volumes:
+      - .:/down
+    restart: always
+    # Common network for both frontend and backend to connect
+    networks:
+      - frontend-backend-network
+
+  # Frontend service which hosts the web interface to connect to the backend service to send emails
+  frontend:
+    build:
+      context: .
+      dockerfile: Frontend.Dockerfile
+    ports:
+      - "${FRONTEND_PORT:-3000}:${FRONTEND_PORT:-3000}"
+    environment:
+      - FRONTEND_PORT= ${FRONTEND_PORT:-3000}
+      - BACKEND_PORT=${BACKEND_PORT:-4000}
+    volumes:
+      - .:/app
+    restart: always
+    networks:
+      - frontend-backend-network
+    extra_hosts:
+      - "localhost:127.0.0.1"
+
+networks:
+  frontend-backend-network:
+    driver: bridge # Optional if we plan to use the network for frontend-backend communication
+
