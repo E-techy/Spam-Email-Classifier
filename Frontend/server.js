@@ -1,4 +1,4 @@
-require("dotenv/lib/main").config({ path: "/frontend/.env" });
+require("dotenv").config({ path: "/frontend/.env" });
 console.log(process.env.FRONTEND_PORT);
 const express = require("express");
 const cors = require("cors");
